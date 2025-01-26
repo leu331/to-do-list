@@ -1,5 +1,6 @@
 .container {
-    width: 96rem;
+    width: 100%;
+    
     
 }
 .form {
@@ -48,11 +49,11 @@ button {
 }
 
 .taskStatus {
-    width: 96rem;
+    width: 100%;
     display: flex;
     align-items: center;
-    justify-content: space-around;
-    padding-inline: 13rem;
+    justify-content: center;
+    gap: 25rem;
 }
 
 .createdTasks {

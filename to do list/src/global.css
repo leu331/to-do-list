@@ -24,15 +24,9 @@
 body {
   background-color: var(--gray-600);
   overflow-x: hidden;
-  height: 100%;
-  width: 100vw;
-  margin: 0;
+ 
   display: flex;
   justify-content: center;  
   align-items: center;  
 }
 
-.container {
-  max-width: 96rem;
-  width: 100%;
-}

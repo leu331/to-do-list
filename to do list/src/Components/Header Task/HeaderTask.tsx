@@ -88,10 +88,7 @@ export function HeaderTasks (){
                 onToggleComplete={handleToggleComplete}
                 handleDeleteTask={handleDeleteTask}/>
               )
-            })}
-            
-
-            
+            })}            
         </div>
     )
 }
