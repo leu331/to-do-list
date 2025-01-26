@@ -1,0 +1,40 @@
+.container {
+    width: 100%; /* Ocupa toda a largura da tela */
+    max-width: 96rem; /* Limita a largura máxima do conteúdo */
+    margin: 0 auto; /* Centraliza o conteúdo */
+    display: flex;
+    justify-content: center; /* Centraliza o conteúdo no eixo horizontal */
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--black);
+    padding-block: 4.5rem 5rem;
+    width: 100vw; /* O fundo ocupa toda a largura da tela */
+    gap: 1rem;
+}
+
+img {
+    width: 1.38rem;
+    height: 2.2rem;
+}
+
+span {
+    font-size: 2.5rem;
+    line-height: auto;
+    font-weight: bold;
+}
+
+.text {
+    & span:nth-child(1){
+        color: var(--blue);
+    }
+
+    & span:nth-child(2){
+        color: var(--purple);
+    }
+}
+
+

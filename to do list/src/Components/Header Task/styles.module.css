@@ -1,0 +1,92 @@
+.container {
+    width: 96rem;
+    
+}
+.form {
+    margin-top: -1.5rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .5rem;
+    margin-bottom: 4rem;
+}
+
+input {
+    padding-block: 1.2rem;
+    padding-inline: 1rem;
+    width: 39.875rem;
+    background-color: var(--gray-500);
+    border: none;
+    border-radius: .5rem;
+    border: 1px solid var(--black);
+    color: var(--gray-300);
+}
+
+button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .5rem;
+
+    height: 3.45rem;
+    width: 5.625rem;
+
+    background-color: var(--blue-dark);
+    color: var(--gray-100);
+    font-size: .875rem;
+    font-weight: bold;
+    line-height: 1.4;
+
+    border: none;
+    border-radius: .5rem;
+    cursor: pointer;
+}
+
+& input:hover{
+    border: 1px solid var(--purple);
+}
+
+.taskStatus {
+    width: 96rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding-inline: 13rem;
+}
+
+.createdTasks {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    
+    color: var(--blue);
+
+    span {
+        background-color: var(--gray-400);
+        color: var(--gray-200);
+        font-size: 0.75rem;
+        padding: .4rem;
+        border-radius: 1rem;
+    }
+}
+
+.completedTasks {
+    display: flex;
+    align-items: center;
+    gap: .5rem; 
+
+    color: var(--purple);
+
+    span {
+        background-color: var(--gray-400);
+        color: var(--gray-200);
+        font-size: 0.75rem;
+        padding: .4rem;
+        border-radius: 1rem;
+    }
+}
+
+
+
+
