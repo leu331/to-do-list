@@ -67,13 +67,13 @@ https://github.com/user-attachments/assets/7c500dd0-de65-4400-a666-a179b02fc646
     - Usando npm:
 
         ```bash
-        npm start
+        npm run dev
         ```
 
     - Ou usando yarn:
 
         ```bash
-        yarn start
+        yarn dev
         ```
 
 5. Abra o navegador e acesse [http://localhost:3000](http://localhost:3000).
