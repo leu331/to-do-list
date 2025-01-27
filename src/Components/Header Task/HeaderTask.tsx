@@ -32,7 +32,7 @@ export function HeaderTasks (){
       }
        setTasks([...tasks, newTaskObj])
       setNewTask("")
-  
+
   }
 
   function handleToggleComplete(id: string){
@@ -54,8 +54,10 @@ export function HeaderTasks (){
         <div className={styles.container}>
             <form className={styles.form} action="" onSubmit={handleAddTask}>
                 <input 
+                id="input"
                 type="text" 
                 title="task" 
+                value={newTask}
                 placeholder="Adicione uma nova tarefa" 
                 onChange={(event) => setNewTask (event.target.value)}
                 />
