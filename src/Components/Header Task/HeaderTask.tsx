@@ -1,6 +1,7 @@
 import styles from "./styles.module.css"
 
 import addTask from "../../assets/addTask.svg"
+import clockCounter from "../../assets/clock-counter-clockwise.svg"
 import { Tasks } from "../Tasks/Tasks";
 
 import { v4 as uuidv4 } from 'uuid';
@@ -30,7 +31,7 @@ export function HeaderTasks (){
         title: newTask,
         isComplete: false
       }
-       setTasks([...tasks, newTaskObj])
+      setTasks([...tasks, newTaskObj])
       setNewTask("")
 
   }
@@ -66,7 +67,18 @@ export function HeaderTasks (){
                     <p>Criar</p>
                     <img src={addTask} alt="" />
                 </button>
+                
             </form>
+
+            <div>
+               <div className={styles.history}>
+                <button type="submit">
+                    <p>Histórico</p>
+                     <img src={clockCounter} alt="" />
+                </button>
+            </div>
+
+            </div>
 
             <div className={styles.taskStatus}>
                 <div className={styles.createdTasks}>
@@ -79,6 +91,8 @@ export function HeaderTasks (){
                     <span> {completedTasks.length} de {tasks.length}</span> 
                 </div>
             </div>
+   
+          
 
             {tasks.map((task) => {
               return (

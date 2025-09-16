@@ -17,12 +17,15 @@ export function Tasks ({title, id, isComplete, onToggleComplete, handleDeleteTas
     }
         
     return (
-        <div className={`${styles.task} ${isComplete ? styles.completed :  ""}`}>
+        <div className={styles.container}>
+             <div className={`${styles.task} ${isComplete ? styles.completed :  ""}`}>
                 <input className={styles.check} type="checkbox" checked={isComplete} onChange={handleCheckboxChange}/>
                 <h2>{title}</h2>
                 <button type="button" onClick={onDeleteTask}>
                     <img src={trashIcon} alt="" />
-                </button>
+                </button>             
             </div>
+        </div>
+       
     )
 }
