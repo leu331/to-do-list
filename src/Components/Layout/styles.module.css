@@ -1,0 +1,45 @@
+/* Faz toda a tela ocupar 100% da altura */
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+.layout {
+  min-height: 100vh;          /* garante altura total da tela */
+  display: flex;
+  flex-direction: column;      /* organiza header, container e footer verticalmente */
+}
+
+/* Container principal cresce para empurrar o footer */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  font-size: 22px;
+  flex: 1;                     /* cresce para ocupar o espaço disponível */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 100%;
+  overflow-y: auto;            /* scroll vertical se o conteúdo passar */
+}
+
+/* Footer sempre no fim */
+.footer {
+  color: white;
+  padding-inline: 10px;
+  background-color: black;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding-block: 25px;
+  flex-shrink: 0;              /* evita que encolha */
+}
+
+/* Header text */
+header span:nth-child(1) { color: #4EA8DE; }
+header span:nth-child(2) { color: #5E60CE; }
+
+.text {
+  font-size: 40px;
+  font-weight: bold;
+}

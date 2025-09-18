@@ -23,10 +23,11 @@
 
 body {
   background-color: var(--gray-600);
-  overflow-x: hidden;
- 
-  display: flex;
-  justify-content: center;  
-  align-items: center;  
+  overflow-x: hidden;  /* evita scroll horizontal */
+  /* não precisa flex no body */
+  display: block;
+  overflow-y: auto;    /* scroll normal */
 }
+
+
 

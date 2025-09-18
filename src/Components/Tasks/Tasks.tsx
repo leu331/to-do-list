@@ -1,8 +1,8 @@
 import styles from "./styles.module.css"
 import trashIcon from "../../assets/trash.svg"
-import { TaskProps } from "../Header Task/HeaderTask"
+import { TaskProps } from "../TaskForm/TaskForm"
 
-export function Tasks ({title, id, isComplete, onToggleComplete, handleDeleteTask}: TaskProps){
+export function Tasks ({title,isHistory, id, isComplete, onToggleComplete, handleDeleteTask}: TaskProps){
 
     function handleCheckboxChange() {
         if (onToggleComplete) {
@@ -19,9 +19,17 @@ export function Tasks ({title, id, isComplete, onToggleComplete, handleDeleteTas
     return (
         <div className={styles.container}>
              <div className={`${styles.task} ${isComplete ? styles.completed :  ""}`}>
-                <input className={styles.check} type="checkbox" checked={isComplete} onChange={handleCheckboxChange}/>
-                <h2>{title}</h2>
-                <button type="button" onClick={onDeleteTask}>
+                <input className={styles.check} 
+                type="checkbox" 
+                checked={isComplete} 
+                onChange={handleCheckboxChange}
+                />
+                    <h2>{title}</h2>
+                <button 
+                disabled={isHistory} 
+                type="button" 
+                onClick={onDeleteTask}
+                className={isHistory ? styles.disabledButton : ""}>
                     <img src={trashIcon} alt="" />
                 </button>             
             </div>

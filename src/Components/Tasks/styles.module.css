@@ -1,6 +1,6 @@
 .container {
     width: 100%;
-    margin-bottom: 20px;
+    margin-block: 10px;
 }
 .task {
   display: flex;
@@ -10,14 +10,19 @@
   width: 100%;
   background-color: var(--gray-500);
   border-radius: 0.5rem;
-  margin-top: 2rem;
   word-break: break-all;
-
 
   input {
     width: 1rem;
     cursor: pointer;     
   }
+  
+  .disabledButton {
+    opacity: 0.2;       
+    cursor: not-allowed; 
+    pointer-events: none; /* garante que não clique */
+  }
+
 
   .check {
     width: 1.25rem;        /* tamanho fixo */

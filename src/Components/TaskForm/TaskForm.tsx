@@ -5,49 +5,14 @@ import clockCounter from "../../assets/clock-counter-clockwise.svg"
 import { Tasks } from "../Tasks/Tasks";
 
 import { v4 as uuidv4 } from 'uuid';
-import { FormEvent, useState } from "react";
+import { FormEvent, useContext, useState } from "react";
+import { Link } from "react-router";
+import { TasksContext } from "../../Context/tasksContext";
 
- export interface TaskProps {
-    id: string
-    title: string
-    isComplete: boolean
-    onToggleComplete?:(id: string) => void 
-    handleDeleteTask?:(id: string) => void
-  }
 
-export function HeaderTasks (){
-  const [tasks, setTasks] = useState<TaskProps[]>([])
-  const [newTask, setNewTask] = useState("")
+export function TaskForm (){
+  const {tasks, handleAddTask, history, setNewTask, newTask, handleToggleComplete, handleDeleteTask} = useContext(TasksContext)
 
-  function handleAddTask(event: FormEvent){
-    event.preventDefault()
-
-    if(!newTask.trim()){
-      alert("A nova tarefa não pode estar vazia")
-      return
-    }
-    const newTaskObj = {
-        id: uuidv4(),
-        title: newTask,
-        isComplete: false
-      }
-      setTasks([...tasks, newTaskObj])
-      setNewTask("")
-
-  }
-
-  function handleToggleComplete(id: string){
-    const updatedTasks = tasks.map(task =>
-      task.id === id ? {...task, isComplete: !task.isComplete} : task
-    )
-
-    setTasks(updatedTasks)
-  }
-
-  function handleDeleteTask(id: string){
-    const updatedTasks = tasks.filter(task => task.id !== id )
-    setTasks(updatedTasks)
-  }
 
   const completedTasks = tasks.filter(task => task.isComplete)
 
@@ -72,10 +37,13 @@ export function HeaderTasks (){
 
             <div>
                <div className={styles.history}>
-                <button type="submit">
-                    <p>Histórico</p>
-                     <img src={clockCounter} alt="" />
-                </button>
+                <Link to={"/history"}>  
+                  <button type="submit">
+                    <p>Meu Histórico</p>
+                    <img src={clockCounter} alt="" />
+                  </button>
+                </Link>
+              
             </div>
 
             </div>
@@ -92,8 +60,6 @@ export function HeaderTasks (){
                 </div>
             </div>
    
-          
-
             {tasks.map((task) => {
               return (
                 <Tasks

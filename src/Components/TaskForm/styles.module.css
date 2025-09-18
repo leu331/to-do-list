@@ -1,50 +1,59 @@
 .container {
   width: 100%;
   padding-inline: 1rem;
+  padding-top: 60px;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
 }
 
-/* form com flex e input ocupando espaço */
 .form {
-  margin-top: -1.5rem;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  justify-content: center;
-  gap: .5rem;
+  justify-content: flex-start;
   width: 100%;
+  gap: 8px;
 }
 
 .form > input {
   flex: 1;               
   min-width: 0;          
   padding-block: 1.2rem;
-  width: 100%;
-  max-width: 64rem;       
   background-color: var(--gray-500);
   border: 1px solid var(--black);
   border-radius: .5rem;
   color: var(--gray-300);
-  padding-inline: 10px;
+  padding-inline: 10px;  
+  
+  &::placeholder {
+    font-size: 16px;
+  } 
 }
 
 input:hover {
   border: 1px solid var(--purple);
 }
 
-.form > button {
+.form button img {
+  filter: brightness(0) invert(1); 
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.form button {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: .5rem;
+  gap: 0.5rem;
   height: 3.45rem;
   padding-inline: 1rem;
   background-color: var(--blue-dark);
   color: var(--gray-100);
-  font-size: .875rem;
+  font-size: 0.875rem;
   font-weight: bold;
-  line-height: 1.4;
   border: none;
-  border-radius: .5rem;
+  border-radius: 0.5rem;
   cursor: pointer;
 }
 
@@ -64,7 +73,8 @@ input:hover {
   align-items: center;
   justify-content: end;
   margin-inline: 2px;
-  margin-block: 20px;
+  margin-block: 10px 20px;
+  width: 100%;
 
   & button {
     display: flex;
@@ -120,8 +130,8 @@ input:hover {
     flex-direction: column;
   }
 
-  input {
-    max-width: 100%;
+  .history {
+      display:block ;
   }
 
   button {
@@ -130,12 +140,16 @@ input:hover {
 
   .taskStatus {
     justify-content: center;
-    gap: 1rem; /* diminui espaço entre Criadas e Concluídas */
+    gap: 1rem;
   }
 }
 
 @media (max-width: 480px) {
   input {
-    max-width: 100%;
+    width: 100%;
+  }
+
+  button {
+    width: 100%;
   }
 }

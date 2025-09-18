@@ -1,18 +1,18 @@
 import './global.css'
 import './app.css'
-
-import { Header } from './Components/Header/Header'
-import { HeaderTasks } from './Components/Header Task/HeaderTask'
-
+import { AppRoutes } from './routes/AppRoutes'
+import { BrowserRouter } from 'react-router'
+import TasksProvider from './Context/tasksContext'
 
 function App() {
 
   return (
     <>
-    <div className='container'>
-      <Header/>
-      <HeaderTasks/>
-    </div>
+        <BrowserRouter>
+          <TasksProvider>
+            <AppRoutes/>
+          </TasksProvider>      
+        </BrowserRouter> 
     </>
   )
 }
